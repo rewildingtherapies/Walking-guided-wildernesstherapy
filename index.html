@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="A self-led 20-minute guided nature walk with reflection exercises, from Rewilding Therapies and The Outdoor Practice.">
+<meta name="description" content="Awaken: a self-led 20-minute guided wilderness walk with reflection exercises, from Rewilding Therapies and The Outdoor Practice.">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
-<title>Holding the Space</title>
+<title>Awaken: a guided wilderness walk</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -72,6 +72,7 @@ a { color: inherit; }
 .brands { display: flex; align-items: center; gap: 8px; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; opacity: .85; margin: 0; }
 .brands::before { content: ""; width: 15px; height: 15px; flex: none; background: currentColor; -webkit-mask: var(--leaf) center / contain no-repeat; mask: var(--leaf) center / contain no-repeat; }
 h1 { font-family: var(--display); font-weight: 500; font-size: clamp(42px, 10vw, 62px); line-height: 1; margin: 12px 0 10px; text-wrap: balance; }
+.subtitle { margin: -4px 0 14px; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; opacity: .9; }
 .lede { margin: 0; max-width: 32ch; opacity: .92; font-family: var(--display); font-size: 22px; font-style: italic; line-height: 1.35; }
 
 .bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); background: color-mix(in srgb, var(--bg) 90%, transparent); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
@@ -196,7 +197,8 @@ footer .wrap { padding-block: 24px 40px; display: grid; gap: 6px; font-size: 14p
       <span class="logo op" role="img" aria-label="The Outdoor Practice logo"><svg viewBox="425 305 750 750" aria-hidden="true"><circle cx="800" cy="680" r="355" fill="none" stroke="#4f6b45" stroke-width="14"/><g fill="none" stroke="#1b2e1c" stroke-width="14" stroke-linecap="butt"><line x1="800" y1="380" x2="800" y2="980"/><polyline points="660,660 800,520 940,660"/><polyline points="690,750 800,640 910,750"/></g></svg></span>
     </div>
     <p class="brands">The Outdoor Practice &middot; Rewilding Therapies</p>
-    <h1>Holding the Space</h1>
+    <h1>Awaken</h1>
+    <p class="subtitle">A guided wilderness walk</p>
     <p class="lede">A self-led nature walk. On your own, or with friends. Come as you are.</p>
   </div>
   <svg class="hills" viewBox="0 0 1200 110" preserveAspectRatio="none" aria-hidden="true">
@@ -289,7 +291,7 @@ footer .wrap { padding-block: 24px 40px; display: grid; gap: 6px; font-size: 14p
         <div class="audio">
           <img class="audio-art" src="images/rewilding-logo.jpg" alt="" width="72" height="72">
           <div class="audio-body">
-            <h3>Holding the Space walk</h3>
+            <h3>Awaken</h3>
             <p class="muted">Guided by Luke &middot; 20 min</p>
             <audio id="walk-audio" controls preload="metadata" src="audio/holding-the-space-walk.m4a">Your browser can't play this recording.</audio>
           </div>
@@ -776,7 +778,7 @@ footer .wrap { padding-block: 24px 40px; display: grid; gap: 6px; font-size: 14p
 
   function today() { return new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" }); }
   function asText() {
-    var out = ["Holding the Space", "A walk on " + today(), ""];
+    var out = ["Awaken: a guided wilderness walk", "A walk on " + today(), ""];
     groups.forEach(function (g) {
       var rows = g.items.filter(function (it) { return document.getElementById(it[0]).value.trim(); });
       if (!rows.length) return;
@@ -794,7 +796,7 @@ footer .wrap { padding-block: 24px 40px; display: grid; gap: 6px; font-size: 14p
     var W = 210, M = 20, y = 24, width = W - M * 2;
     function need(h) { if (y + h > 277) { doc.addPage(); y = 22; } }
     doc.setFont("times", "normal"); doc.setFontSize(26); doc.setTextColor(26, 58, 42);
-    doc.text("Holding the Space", M, y); y += 8;
+    doc.text("Awaken", M, y); y += 8;
     doc.setFont("helvetica", "normal"); doc.setFontSize(11); doc.setTextColor(90, 106, 94);
     doc.text("A walk on " + today(), M, y); y += 12;
     groups.forEach(function (g) {
@@ -851,12 +853,12 @@ footer .wrap { padding-block: 24px 40px; display: grid; gap: 6px; font-size: 14p
     } catch (e) { tell("Download isn't available here. Use Copy all and paste it into your notes."); }
   }
   var stamp = function () { return new Date().toISOString().slice(0, 10); };
-  document.getElementById("dl-txt").addEventListener("click", function () { offer("holding-the-space-" + stamp() + ".txt", asText()); });
+  document.getElementById("dl-txt").addEventListener("click", function () { offer("awaken-walk-" + stamp() + ".txt", asText()); });
   document.getElementById("dl-pdf").addEventListener("click", function () {
     if (!filled()) { tell("Write something first, then download it."); return; }
     var pdf = asPdf();
     if (!pdf) { tell("The PDF tool didn't load. Try the text file instead."); return; }
-    offer("holding-the-space-" + stamp() + ".pdf", pdf);
+    offer("awaken-walk-" + stamp() + ".pdf", pdf);
   });
   document.getElementById("copy-all").addEventListener("click", function () {
     if (!filled()) { tell("Write something first, then copy it."); return; }

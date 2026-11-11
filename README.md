@@ -1,4 +1,4 @@
-# Holding the Space: guided wilderness therapy walk
+# Awaken: a guided wilderness walk
 
 A self-led 20-minute guided nature walk from **Rewilding Therapies** and **The Outdoor Practice**.
 
