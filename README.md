@@ -1,4 +1,4 @@
-# Awaken: a guided wilderness walk
+# Awaken to your inner wilderness
 
 A self-led 20-minute guided nature walk from **Rewilding Therapies** and **The Outdoor Practice**.
 
