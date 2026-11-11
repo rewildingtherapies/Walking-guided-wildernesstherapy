@@ -1,0 +1,879 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="A self-led 20-minute guided nature walk with reflection exercises, from Rewilding Therapies and The Outdoor Practice.">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Holding the Space</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: a field card. Forest band header, one calm reading column, ember reserved for support. */
+:root {
+  --bg: #f3f1e7;
+  --surface: #fbfaf4;
+  --line: #dddfcf;
+  --ink: #1f2c24;
+  --muted: #5a6a5e;
+  --forest: #1a3a2a;
+  --forest-2: #2e5040;
+  --on-forest: #f5f0e8;
+  --sage: #6d8766;
+  --sage-tint: #e5ebdb;
+  --hill-back: #3d6150;
+  --hill-mid: #5d806a;
+  --btn: #1a3a2a;
+  --ember: #9f4f22;
+  --ember-fill: #c47448;
+  --on-ember: #fffaf3;
+  --ember-tint: #f6e8dc;
+  --focus: #c47448;
+  --leaf: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20 3C10 3 4 8.5 4 15.5c0 1.6.4 3 1.1 4.2C6.3 15.6 9.4 11.8 14 9.6 10.2 12.6 7.8 16 6.9 20.4 8.2 21.4 9.8 22 11.5 22 18.5 22 22 14.5 20 3z'/%3E%3C/svg%3E");
+  --display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111f18; --surface: #182a21; --line: #2b4135; --ink: #ebe7dc; --muted: #a8b4a8;
+    --forest: #163224; --forest-2: #1f3d2e; --on-forest: #f5f0e8; --sage: #a3b89c; --sage-tint: #1f3329;
+    --hill-back: #1c3a2b; --hill-mid: #234534; --btn: #35574a; --ember: #e39468; --ember-fill: #b8683f;
+    --on-ember: #fffaf3; --ember-tint: #2c221a; --focus: #e39468; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111f18; --surface: #182a21; --line: #2b4135; --ink: #ebe7dc; --muted: #a8b4a8;
+  --forest: #163224; --forest-2: #1f3d2e; --on-forest: #f5f0e8; --sage: #a3b89c; --sage-tint: #1f3329;
+  --hill-back: #1c3a2b; --hill-mid: #234534; --btn: #35574a; --ember: #e39468; --ember-fill: #b8683f;
+  --on-ember: #fffaf3; --ember-tint: #2c221a; --focus: #e39468; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background-color: var(--bg); background-image: radial-gradient(40rem 26rem at 115% 30%, var(--sage-tint), transparent 70%), radial-gradient(36rem 24rem at -15% 75%, var(--sage-tint), transparent 70%); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.6; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
+.wrap { max-width: 680px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+/* Header: forest sky fading into layered hills that meet the page */
+.band { position: relative; background: linear-gradient(180deg, var(--forest) 0%, var(--forest-2) 100%); color: var(--on-forest); overflow: hidden; }
+.band .wrap { position: relative; z-index: 1; padding-block: 36px 96px; }
+.hills { position: absolute; left: 0; right: 0; bottom: -1px; width: 100%; height: 110px; display: block; }
+.hills .back { fill: var(--hill-back); }
+.hills .mid { fill: var(--hill-mid); opacity: .85; }
+.hills .front { fill: var(--bg); }
+.logos { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+.logo { width: 76px; height: 76px; border-radius: 50%; background: #f4f1ea; object-fit: cover; flex: none; box-shadow: 0 0 0 3px rgba(245, 240, 232, .22); }
+.logo.op { display: grid; place-items: center; }
+.logo.op svg { width: 84%; height: 84%; display: block; }
+.logos.foot { margin: 0 0 6px; }
+.logos.foot .logo { width: 88px; height: 88px; box-shadow: 0 0 0 1px var(--line); }
+.brands { display: flex; align-items: center; gap: 8px; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; opacity: .85; margin: 0; }
+.brands::before { content: ""; width: 15px; height: 15px; flex: none; background: currentColor; -webkit-mask: var(--leaf) center / contain no-repeat; mask: var(--leaf) center / contain no-repeat; }
+h1 { font-family: var(--display); font-weight: 500; font-size: clamp(42px, 10vw, 62px); line-height: 1; margin: 12px 0 10px; text-wrap: balance; }
+.lede { margin: 0; max-width: 32ch; opacity: .92; font-family: var(--display); font-size: 22px; font-style: italic; line-height: 1.35; }
+
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); background: color-mix(in srgb, var(--bg) 90%, transparent); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+.bar .wrap { display: flex; align-items: center; gap: 6px; padding-block: 10px; }
+.tab { font: 500 15px var(--body); color: var(--muted); background: transparent; border: 0; border-radius: 999px; padding: 9px 14px; cursor: pointer; }
+.tab[aria-selected="true"] { color: var(--ink); background: var(--sage-tint); }
+.help-btn { margin-left: auto; font: 500 15px var(--body); background: var(--ember-fill); color: var(--on-ember); border: 0; border-radius: 999px; padding: 10px 16px; cursor: pointer; white-space: nowrap; }
+
+main .wrap { padding-block: 32px 64px; display: grid; gap: 40px; }
+section { display: grid; gap: 14px; }
+h2 { font-family: var(--display); font-weight: 600; font-size: 32px; line-height: 1.1; margin: 0; text-wrap: balance; }
+h3 { font-size: 17px; font-weight: 600; margin: 0; }
+p { margin: 0; max-width: 62ch; }
+.muted { color: var(--muted); }
+.eyebrow { display: flex; align-items: center; gap: 8px; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--sage); margin: 0; font-weight: 600; }
+.eyebrow::before { content: ""; width: 14px; height: 14px; flex: none; background: currentColor; -webkit-mask: var(--leaf) center / contain no-repeat; mask: var(--leaf) center / contain no-repeat; }
+ul.plain { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; }
+ol.steps { margin: 0; padding: 0; list-style: none; counter-reset: s; display: grid; gap: 10px; }
+ol.steps li { counter-increment: s; display: grid; grid-template-columns: 38px 1fr; gap: 12px; align-items: center; }
+ol.steps li::before { content: counter(s); display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: var(--surface); color: var(--ink); font-family: var(--display); font-size: 22px; font-weight: 600; }
+
+.panel { background: var(--sage-tint); border: 0; border-radius: 28px 28px 28px 8px; padding: 24px; display: grid; gap: 14px; }
+.pointer { font-size: 15px; color: var(--muted); }
+.pointer button { font: inherit; color: var(--ember); background: none; border: 0; padding: 0; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; font-weight: 500; }
+
+/* Checklist */
+.check { display: grid; gap: 8px; }
+.check label { display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); cursor: pointer; }
+.check input { width: 22px; height: 22px; margin: 2px 0 0; accent-color: var(--sage); flex: none; }
+
+/* Agreements */
+.agree { display: grid; gap: 0; border-top: 1px solid var(--line); }
+.agree div { display: grid; grid-template-columns: minmax(0, 11em) minmax(0, 1fr); gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.agree strong { font-family: var(--display); font-size: 22px; font-weight: 600; line-height: 1.2; }
+@media (max-width: 520px) { .agree div { grid-template-columns: 1fr; gap: 4px; } }
+
+/* Coming next */
+.next { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; border-top: 1px dashed var(--line); }
+.next li { padding: 10px 0; border-bottom: 1px dashed var(--line); display: flex; justify-content: space-between; gap: 12px; color: var(--muted); }
+
+/* Support */
+.urgent { background: var(--ember-tint); border: 1.5px solid var(--ember-fill); border-radius: 24px; padding: 24px; display: grid; gap: 10px; }
+.urgent h2 { font-size: 28px; }
+.lines { display: grid; gap: 10px; }
+.line { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 18px; display: grid; gap: 8px; }
+.line-top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 12px; align-items: baseline; }
+.line-name { font-weight: 600; }
+.line-hours { font-size: 14px; color: var(--muted); }
+.line-what { font-size: 15px; color: var(--muted); }
+.line-num { font-size: 24px; font-weight: 600; font-variant-numeric: tabular-nums; letter-spacing: .02em; user-select: all; }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.btn { font: 500 15px var(--body); border-radius: 999px; padding: 8px 16px; cursor: pointer; border: 1px solid var(--btn); background: var(--btn); color: var(--on-forest); text-decoration: none; display: inline-flex; align-items: center; }
+.btn.ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+
+details.tool { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; }
+details.tool summary { cursor: pointer; padding: 16px 18px; font-weight: 600; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+details.tool summary::-webkit-details-marker { display: none; }
+details.tool summary::after { content: "+"; font-weight: 400; color: var(--muted); }
+details.tool[open] summary::after { content: "\2212"; }
+details.tool .body { padding: 0 18px 18px; display: grid; gap: 10px; }
+.skip { font-size: 14px; color: var(--muted); font-style: italic; }
+.template { background: var(--bg); border: 1px dashed var(--line); border-radius: 10px; padding: 12px 14px; font-size: 16px; }
+
+/* Writing spaces */
+.field { display: grid; gap: 6px; }
+.field label { font-weight: 600; }
+.hint { font-size: 15px; color: var(--muted); margin: -2px 0 2px; }
+textarea, input[type="text"] { width: 100%; font: 17px/1.55 var(--body); color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 12px 14px; resize: vertical; }
+textarea:focus, input[type="text"]:focus { outline: 2px solid var(--sage); outline-offset: 1px; border-color: transparent; }
+::placeholder { color: var(--muted); opacity: .7; }
+
+.audio { display: flex; gap: 16px; align-items: center; padding: 18px; border-radius: 24px; background: var(--forest); color: var(--on-forest); }
+.audio-art { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; flex: none; background: #f4f1ea; }
+.audio-body { display: grid; gap: 8px; min-width: 0; flex: 1; }
+.audio audio { width: 100%; display: block; }
+.audio .muted { color: var(--on-forest); opacity: .8; }
+.audio-mark { width: 56px; height: 56px; border-radius: 50%; flex: none; background: var(--on-forest); opacity: .9; -webkit-mask: radial-gradient(circle, transparent 0 14px, #000 15px) ; mask: radial-gradient(circle, transparent 0 14px, #000 15px); position: relative; }
+.stages { list-style: none; margin: 0; padding: 0; display: grid; }
+.stages li { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.stages li:last-child { border-bottom: 0; }
+.stages .time { font-variant-numeric: tabular-nums; color: var(--sage); font-weight: 600; padding-top: 1px; }
+.stages p { font-size: 15px; }
+
+.activity { background: var(--surface); border: 1px solid var(--line); border-radius: 26px 26px 26px 8px; padding: 22px; display: grid; gap: 12px; }
+.act-num { font-family: var(--display); font-style: italic; font-size: 20px; color: var(--sage); margin: 0; }
+.activity h3 { font-family: var(--display); font-size: 26px; font-weight: 600; line-height: 1.15; }
+.trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+@media (max-width: 560px) { .trio { grid-template-columns: 1fr; } }
+
+.export { background: var(--sage-tint); border-radius: 24px; padding: 22px; display: grid; gap: 14px; }
+.export-count { font-weight: 600; }
+.clear { border-top: 1px solid var(--line); padding-top: 12px; display: grid; gap: 10px; }
+.link-btn { font: 15px var(--body); color: var(--muted); background: none; border: 0; padding: 0; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; justify-self: start; }
+.confirm { display: grid; gap: 10px; }
+.btn.danger { background: var(--ember); border-color: var(--ember); color: var(--on-ember); }
+
+.help-btn .short { display: none; }
+@media (max-width: 440px) {
+  .tab { padding: 8px 10px; font-size: 14px; }
+  .help-btn { padding: 9px 13px; font-size: 14px; }
+  .help-btn .long { display: none; }
+  .help-btn .short { display: inline; }
+}
+.about { background: var(--surface); border: 1px solid var(--line); border-radius: 28px 28px 8px 28px; padding: 24px; }
+.about-head { display: flex; align-items: center; gap: 16px; }
+.about-logo { width: 72px; height: 72px; box-shadow: 0 0 0 1px var(--line); }
+.about a { color: var(--ember); font-weight: 500; text-underline-offset: 3px; }
+
+footer { background: var(--sage-tint); border-radius: 40px 40px 0 0; }
+footer .wrap { padding-block: 24px 40px; display: grid; gap: 6px; font-size: 14px; color: var(--muted); }
+.sign { font-family: var(--display); font-size: 24px; color: var(--ink); font-style: italic; }
+.toast { position: fixed; left: 50%; bottom: calc(20px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--forest); color: var(--on-forest); padding: 10px 16px; border-radius: 999px; font-size: 14px; z-index: 20; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+</style>
+
+</head>
+<body>
+<header class="band">
+  <div class="wrap">
+    <div class="logos">
+      <img class="logo" src="data:image/webp;base64,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" alt="Rewilding Therapies logo" width="76" height="76">
+      <span class="logo op" role="img" aria-label="The Outdoor Practice logo"><svg viewBox="425 305 750 750" aria-hidden="true"><circle cx="800" cy="680" r="355" fill="none" stroke="#4f6b45" stroke-width="14"/><g fill="none" stroke="#1b2e1c" stroke-width="14" stroke-linecap="butt"><line x1="800" y1="380" x2="800" y2="980"/><polyline points="660,660 800,520 940,660"/><polyline points="690,750 800,640 910,750"/></g></svg></span>
+    </div>
+    <p class="brands">The Outdoor Practice &middot; Rewilding Therapies</p>
+    <h1>Holding the Space</h1>
+    <p class="lede">A self-led nature walk. On your own, or with friends. Come as you are.</p>
+  </div>
+  <svg class="hills" viewBox="0 0 1200 110" preserveAspectRatio="none" aria-hidden="true">
+    <path class="back" d="M0 62 C150 28 300 36 450 56 S750 18 900 42 S1100 58 1200 30 L1200 110 L0 110 Z"/>
+    <path class="mid" d="M0 84 C200 54 350 74 520 79 S820 50 1000 71 S1150 79 1200 64 L1200 110 L0 110 Z"/>
+    <path class="front" d="M0 100 C250 80 500 104 700 94 S1000 82 1200 98 L1200 110 L0 110 Z"/>
+  </svg>
+</header>
+
+<nav class="bar" aria-label="Sections">
+  <div class="wrap" role="tablist">
+    <button class="tab" role="tab" id="tab-walk" aria-controls="view-walk" data-view="walk">The walk</button>
+    <button class="tab" role="tab" id="tab-support" aria-controls="view-support" data-view="support">Support</button>
+    <button class="tab" role="tab" id="tab-about" aria-controls="view-about" data-view="about">About</button>
+    <button class="help-btn" data-view="support"><span class="long">Need support?</span><span class="short">Help</span></button>
+  </div>
+</nav>
+
+<main>
+  <!-- WALK VIEW -->
+  <div id="view-walk" role="tabpanel" aria-labelledby="tab-walk">
+    <div class="wrap">
+
+      <section>
+        <p class="eyebrow">Welcome</p>
+        <h2>However you're arriving, that's fine</h2>
+        <p>This is a 20-minute guided walk with a recording to listen to, followed by time to reflect and write. You can do it on your own, or with a small group you trust.</p>
+        <p>The recording is a gentle introduction to wilderness therapy exercises, and to thinking in metaphor: letting something in nature act as a mirror for what's going on in you. Once you're back, there are a few more exercises to try further down the page.</p>
+        <p>Different parts of you might turn up today. A curious part. An anxious part. A tired part, or one that's a bit sceptical about all this. They're all welcome. Nobody needs to be left at home.</p>
+        <p>Everything here is an invitation. Follow it, change it, or let it go by. You can pause or stop at any point.</p>
+        <p class="muted">This is a wellbeing practice. It isn't therapy, and it isn't crisis support.</p>
+        <p class="pointer">If things feel heavy at any point, the <button data-view="support">Support tab</button> has numbers to call and simple things to try.</p>
+      </section>
+
+      <section>
+        <p class="eyebrow">Before you go</p>
+        <h2>A quick check</h2>
+        <div class="check">
+          <label><input type="checkbox" id="c-route"> <span>I've picked a familiar route that suits my body today. A park, a garden or a tree-lined street is enough.</span></label>
+          <label><input type="checkbox" id="c-weather"> <span>I've checked the weather and how much daylight is left.</span></label>
+          <label><input type="checkbox" id="c-phone"> <span>My phone is charged, and headphones are low with one ear free where it makes sense.</span></label>
+          <label><input type="checkbox" id="c-told"> <span>Someone knows where I'm going and roughly when I'll be back.</span></label>
+          <label><input type="checkbox" id="c-support"> <span>I know where the Support tab is if I need it.</span></label>
+        </div>
+      </section>
+
+      <section>
+        <p class="eyebrow">Walking with friends</p>
+        <h2>Holding the space</h2>
+        <p>If you're doing this together, read these out before you set off. They keep it safe for everyone.</p>
+        <div class="agree">
+          <div><strong>Just listen</strong><p>No advising, no fixing, no rescuing. You don't need to make anyone feel better. Being there is enough.</p></div>
+          <div><strong>Share what you want</strong><p>Nobody has to say anything. Passing is always fine, and nobody asks why.</p></div>
+          <div><strong>No comments</strong><p>When someone shares, let it land. No "at least", no stories of your own, no questions to dig deeper.</p></div>
+          <div><strong>It stays here</strong><p>What's shared on the walk isn't passed on to anyone else.</p></div>
+          <div><strong>A stop signal</strong><p>Agree one before you start, like a raised hand. Anyone can use it, any time, no explanation needed.</p></div>
+          <div><strong>Nobody walks off alone</strong><p>If someone needs to stop or head back, someone goes with them, or the group goes together.</p></div>
+          <div><strong>Keep an eye out</strong><p>Pick one person to keep an eye on the group and the route. They can still take part.</p></div>
+        </div>
+      </section>
+
+      <section>
+        <p class="eyebrow">If it gets too much</p>
+        <h2>Five steps, any time</h2>
+        <div class="panel">
+          <ol class="steps">
+            <li><span><strong>Stop.</strong> Somewhere out of the way.</span></li>
+            <li><span><strong>Eyes open.</strong> Look around slowly.</span></li>
+            <li><span><strong>Name three things</strong> you can see. Out loud if it helps.</span></li>
+            <li><span><strong>Get solid.</strong> Feet on the ground, or a hand on a tree, wall or bench.</span></li>
+            <li><span><strong>Choose.</strong> Carry on, walk back, or stop the recording.</span></li>
+          </ol>
+          <p class="pointer">Need more than that? Go to the <button data-view="support">Support tab</button>.</p>
+        </div>
+      </section>
+
+      <section>
+        <p class="eyebrow">Before you set off</p>
+        <h2>An intention for today</h2>
+        <p>What would you like from this walk? It can be small. Some fresh air. A bit of quiet. Time away from a screen. Or nothing at all.</p>
+        <div class="field">
+          <label for="i-today">Today I'd like…</label>
+          <textarea id="i-today" rows="3" placeholder="Optional. A few words is plenty."></textarea>
+        </div>
+      </section>
+
+      <section>
+        <p class="eyebrow">The walk</p>
+        <h2>20 minutes, six stages</h2>
+        <div class="audio">
+          <img class="audio-art" src="images/rewilding-logo.jpg" alt="" width="72" height="72">
+          <div class="audio-body">
+            <h3>Holding the Space walk</h3>
+            <p class="muted">Guided by Luke &middot; 20 min</p>
+            <audio id="walk-audio" controls preload="metadata" src="audio/holding-the-space-walk.m4a">Your browser can't play this recording.</audio>
+          </div>
+        </div>
+        <p>Press play, then put your phone in your pocket. The recording guides you through each stage, so you don't need to look at the screen. Pause it any time.</p>
+        <ol class="stages">
+          <li><span class="time">00:00</span><div><h3>Welcome and choice</h3><p class="muted">Listen before you set off. All parts of you are welcome.</p></div></li>
+          <li><span class="time">02:00</span><div><h3>Gently arriving</h3><p class="muted">Look around. Find a pace that fits today.</p></div></li>
+          <li><span class="time">05:00</span><div><h3>Noticing while walking</h3><p class="muted">Sights, sounds, movement, the things you'd usually walk past.</p></div></li>
+          <li><span class="time">09:00</span><div><h3>Stopping and reflecting</h3><p class="muted">Find a spot. Which parts of you are here right now?</p></div></li>
+          <li><span class="time">11:00</span><div><h3>Nature as a mirror</h3><p class="muted">Something nearby that draws you. What do you notice?</p></div></li>
+          <li><span class="time">16:00</span><div><h3>Return</h3><p class="muted">One small thing to carry into your day.</p></div></li>
+        </ol>
+        <p class="hint">Times are approximate.</p>
+        <p class="pointer">Keep your eyes up while you're moving. Write when you've stopped, or once you're home.</p>
+      </section>
+
+      <section>
+        <p class="eyebrow">Reflections</p>
+        <h2>Space to write</h2>
+        <p>Write as much or as little as you like. Notes, single words, half sentences. None of it is marked.</p>
+        <div class="field">
+          <label for="r-arrive">Arriving</label>
+          <p class="hint">What did you notice as you set off?</p>
+          <textarea id="r-arrive" rows="3"></textarea>
+        </div>
+        <div class="field">
+          <label for="r-notice">Noticing</label>
+          <p class="hint">Anything that caught your eye, or your ear?</p>
+          <textarea id="r-notice" rows="3"></textarea>
+        </div>
+        <div class="field">
+          <label for="r-stop">Stopping</label>
+          <p class="hint">What were you noticing when you stopped? Has anything shifted, or does it feel much the same? Either is fine.</p>
+          <textarea id="r-stop" rows="3"></textarea>
+        </div>
+        <div class="field">
+          <label for="r-parts">Parts of me</label>
+          <p class="hint">Which parts of you showed up today? The curious part, the anxious part, the part that wasn't sure. No need to change any of them.</p>
+          <textarea id="r-parts" rows="3"></textarea>
+        </div>
+      </section>
+
+      <section>
+        <p class="eyebrow">Nature as a mirror</p>
+        <h2>Ways in</h2>
+        <p>Pick one, some, or none. Start with what's actually there. Only then, if you'd like, ask whether it connects with anything in your life. Whatever it means is yours to find. If nothing comes, that's fine.</p>
+        <p class="muted">You can pick things up if you like. Leave anything still growing where it is, and put things back when you're done if you can.</p>
+
+        <div class="activity">
+          <p class="act-num">One</p>
+          <h3>From the walk</h3>
+          <p>The thing you settled on during the recording. A tree, a stone, a puddle, a weed in a wall. Whatever kept drawing you back.</p>
+          <div class="field">
+            <label for="m1-what">What do I actually notice about it?</label>
+            <p class="hint">Shape, colour, how it sits, any marks or wear.</p>
+            <textarea id="m1-what" rows="3"></textarea>
+          </div>
+          <div class="field">
+            <label for="m1-connect">Does anything about it connect with how life feels at the moment?</label>
+            <p class="hint">Only if you'd like to. You might ask: what draws me to this? Does it feel familiar? Does it bring a question or a possibility to mind?</p>
+            <textarea id="m1-connect" rows="3"></textarea>
+          </div>
+        </div>
+
+        <div class="activity">
+          <p class="act-num">Two</p>
+          <h3>How I see myself, how I'd like to be seen</h3>
+          <p>Take a little longer outside, or use things you picked up or remember. Find two natural things. Let the first stand for how you see yourself right now. Let the second stand for how you'd like to be seen.</p>
+          <div class="field">
+            <label for="x-seen-item">Thing one: how I see myself</label>
+            <input id="x-seen-item" type="text" placeholder="e.g. a rough bit of bark">
+          </div>
+          <div class="field">
+            <label for="x-seen">What do I notice about it, and what does it say about how I see myself?</label>
+            <p class="hint">Start with what's actually there: shape, colour, weight, marks. Then, if you like, what feels familiar about it. This is one view of yourself. It isn't the whole story.</p>
+            <textarea id="x-seen" rows="3"></textarea>
+          </div>
+          <div class="field">
+            <label for="x-like-item">Thing two: how I'd like to be seen</label>
+            <input id="x-like-item" type="text" placeholder="e.g. a smooth stone">
+          </div>
+          <div class="field">
+            <label for="x-like">What is it about this thing?</label>
+            <p class="hint">A quality, a colour, the way it holds itself. Where does that already show up in you, even a little?</p>
+            <textarea id="x-like" rows="3"></textarea>
+          </div>
+          <div class="field">
+            <label for="x-side">Side by side</label>
+            <p class="hint">What's the same? What's different? There's nothing to fix. Just notice.</p>
+            <textarea id="x-side" rows="3"></textarea>
+          </div>
+        </div>
+
+        <div class="activity">
+          <p class="act-num">Three</p>
+          <h3>Then, now, next</h3>
+          <p>Find three natural things on your walk. Let each one stand for a part of your story, in whatever way makes sense to you.</p>
+          <div class="trio">
+            <div class="field">
+              <label for="m2-been">Where I've been</label>
+              <input id="m2-been" type="text" placeholder="e.g. a fallen branch">
+            </div>
+            <div class="field">
+              <label for="m2-now">Where I am</label>
+              <input id="m2-now" type="text" placeholder="e.g. a muddy path">
+            </div>
+            <div class="field">
+              <label for="m2-next">Where I'm heading</label>
+              <input id="m2-next" type="text" placeholder="e.g. a gap in the trees">
+            </div>
+          </div>
+          <div class="field">
+            <label for="m2-note">What did you choose, and why?</label>
+            <textarea id="m2-note" rows="3"></textarea>
+          </div>
+        </div>
+
+        <div class="activity">
+          <p class="act-num">Four</p>
+          <h3>Just describe it</h3>
+          <p>If words about meaning don't come, describe one thing in plain detail, as if to someone who's never seen it. Or sketch it on paper.</p>
+          <div class="field">
+            <label for="m3-describe">Describe it</label>
+            <textarea id="m3-describe" rows="4"></textarea>
+          </div>
+        </div>
+
+        <p class="pointer">If any of this brings up more than you'd like, leave it. Look around, and go to the <button data-view="support">Support tab</button> if you need to.</p>
+      </section>
+
+      <section>
+        <p class="eyebrow">Strengths and values</p>
+        <h2>What already helps</h2>
+        <p>A few questions to wonder about. You don't need full answers. A word or two is plenty.</p>
+        <div class="field">
+          <label for="v-good">What's something I'm good at?</label>
+          <p class="hint">It can be small. Making a decent brew. Listening. Turning up. What would someone who knows you well say?</p>
+          <textarea id="v-good" rows="2"></textarea>
+        </div>
+        <div class="field">
+          <label for="v-easier">When have things felt even a little easier?</label>
+          <p class="hint">What was different? What were you doing?</p>
+          <textarea id="v-easier" rows="2"></textarea>
+        </div>
+        <div class="field">
+          <label for="v-helps">What helps me on a tough day?</label>
+          <p class="hint">Even a little. A person, a place, a habit.</p>
+          <textarea id="v-helps" rows="2"></textarea>
+        </div>
+        <div class="field">
+          <label for="v-matters">What matters to me?</label>
+          <p class="hint">When do you feel most like yourself?</p>
+          <textarea id="v-matters" rows="2"></textarea>
+        </div>
+      </section>
+
+      <section>
+        <p class="eyebrow">Walking with friends</p>
+        <h2>A sharing circle</h2>
+        <p>An optional way to close if you're walking together. Read the <strong>Holding the space</strong> agreements out loud first.</p>
+        <div class="panel">
+          <ol class="steps">
+            <li><span><strong>Gather.</strong> Stand or sit in a loose circle, somewhere out of the way.</span></li>
+            <li><span><strong>Pick a talking piece.</strong> A stick or a stone. Whoever holds it speaks. Put it back where you found it afterwards.</span></li>
+            <li><span><strong>One at a time.</strong> Each person gets a couple of minutes. Share something you noticed, your metaphor, or nothing.</span></li>
+            <li><span><strong>Just listen.</strong> No comments, no advice, no questions. When someone finishes, the group says "thank you" and that's all.</span></li>
+            <li><span><strong>Passing is fine.</strong> Hand the piece on without speaking if you'd rather.</span></li>
+            <li><span><strong>Close with one word.</strong> Go round once more. One word each for how you're leaving.</span></li>
+          </ol>
+        </div>
+      </section>
+
+      <section>
+        <p class="eyebrow">Goals to carry</p>
+        <h2>One small thing</h2>
+        <p>Is there one small thing you'd like to take into the rest of your day, or your week? A detail you noticed, a question, a cup of tea, a phone call. If nothing stands out, that's fine too.</p>
+        <div class="field">
+          <label for="g-thing">My one small thing</label>
+          <input id="g-thing" type="text">
+        </div>
+        <div class="field">
+          <label for="g-when">When</label>
+          <input id="g-when" type="text" placeholder="e.g. tomorrow morning">
+        </div>
+        <div class="field">
+          <label for="g-help">What, or who, could help</label>
+          <input id="g-help" type="text">
+        </div>
+        <p class="muted">If it doesn't happen, that's okay. You can come back to it.</p>
+      </section>
+
+      <section>
+        <p class="eyebrow">Take it with you</p>
+        <h2>Download your reflections</h2>
+        <p>Everything you've written is saved on this phone only. Nothing is sent anywhere. Download a copy to keep, or copy it into your notes.</p>
+        <div class="export">
+          <p class="export-count" id="export-count">Nothing written yet.</p>
+          <div class="actions">
+            <button class="btn" id="dl-pdf">Download PDF</button>
+            <button class="btn ghost" id="dl-txt">Download text file</button>
+            <button class="btn ghost" id="copy-all">Copy all</button>
+          </div>
+          <p class="hint" id="export-note" hidden></p>
+          <div class="clear">
+            <button class="link-btn" id="clear-start">Clear everything on this phone</button>
+            <div class="confirm" id="clear-confirm" hidden>
+              <p>This deletes everything you've written here. Download a copy first if you want to keep it.</p>
+              <div class="actions">
+                <button class="btn danger" id="clear-yes">Yes, clear it</button>
+                <button class="btn ghost" id="clear-no">Keep it</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <p class="eyebrow">Work with me</p>
+        <h2>Want to go further?</h2>
+        <div class="panel">
+          <p>If this walk opened something up and you'd like to explore it with support, I offer 1:1 wilderness therapy sessions outdoors.</p>
+          <p>I'm currently on my wilderness psychotherapy training placement, so sessions are <strong>&pound;20</strong> each.</p>
+          <p>To arrange a session, email me:</p>
+          <div class="line-num" style="font-size:20px">hello@rewildingtherapies.co.uk</div>
+          <div class="actions">
+            <a class="btn" href="mailto:hello@rewildingtherapies.co.uk?subject=1%3A1%20sessions">Email Luke</a>
+            <button class="btn ghost" data-copy="hello@rewildingtherapies.co.uk">Copy email</button>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- ABOUT VIEW -->
+  <div id="view-about" role="tabpanel" aria-labelledby="tab-about" hidden>
+    <div class="wrap">
+
+      <section class="about" id="about">
+        <p class="eyebrow">About me</p>
+        <div class="about-head">
+          <img class="logo about-logo" id="about-logo" alt="Rewilding Therapies logo" width="72" height="72">
+          <h2>Hello, I'm Luke</h2>
+        </div>
+        <p>I'm a wilderness psychotherapist in training, registered with the NCPS, and the founder of Rewilding Therapies and Modern Tribe Collective CIC in South Manchester. I'm also a natural movement coach and men's work facilitator.</p>
+        <p>My work is about getting people outside, slowing down, and reconnecting with themselves. I see nature as the co-facilitator. It doesn't fix anyone, and neither do I. It gives you space to notice what's already there.</p>
+        <p>I made this walk for anyone who wants some time outside on their own terms. No experience needed, and no right way to do it.</p>
+        <p>I'm also the founder of The Outdoor Practice, a Skool community for practitioners who want to take their practice outside safely, ethically and with quality.</p>
+        <p><a href="https://rewildingtherapies.com">rewildingtherapies.com</a></p>
+        <div class="actions"><button class="btn" data-view="walk">Go to the walk</button></div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- SUPPORT VIEW -->
+  <div id="view-support" role="tabpanel" aria-labelledby="tab-support" hidden>
+    <div class="wrap">
+
+      <section>
+        <p class="eyebrow">Support</p>
+        <h2>You can stop. That's looking after yourself.</h2>
+        <p>If this walk stirs up more than you'd like, there's no need to push on. Here are people to call, and simple things to try.</p>
+      </section>
+
+      <div class="urgent" role="region" aria-labelledby="urgent-h">
+        <h2 id="urgent-h">If someone's life is at risk</h2>
+        <p>If you can't keep yourself or someone else safe, call 999 or go to A&amp;E. If you're with a friend who is at risk, stay with them.</p>
+        <div class="line-num">999</div>
+        <div class="actions">
+          <a class="btn" href="tel:999">Call 999</a>
+          <button class="btn ghost" data-copy="999">Copy number</button>
+        </div>
+      </div>
+
+      <section>
+        <h2>Urgent help, any time</h2>
+        <div class="lines">
+          <div class="line">
+            <div class="line-top"><span class="line-name">NHS urgent mental health</span><span class="line-hours">24 hours</span></div>
+            <div class="line-what">England, Wales and Scotland. Call 111 and choose option 2.</div>
+            <div class="line-num">111, option 2</div>
+            <div class="actions"><a class="btn" href="tel:111">Call 111</a><button class="btn ghost" data-copy="111">Copy number</button></div>
+          </div>
+          <div class="line">
+            <div class="line-top"><span class="line-name">Lifeline</span><span class="line-hours">24 hours</span></div>
+            <div class="line-what">Northern Ireland crisis line.</div>
+            <div class="line-num">0808 808 8000</div>
+            <div class="actions"><a class="btn" href="tel:08088088000">Call Lifeline</a><button class="btn ghost" data-copy="0808 808 8000">Copy number</button></div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Someone to talk to</h2>
+        <div class="lines">
+          <div class="line">
+            <div class="line-top"><span class="line-name">Samaritans</span><span class="line-hours">Free, 24 hours</span></div>
+            <div class="line-what">Confidential listening from trained volunteers.</div>
+            <div class="line-num">116 123</div>
+            <div class="actions"><a class="btn" href="tel:116123">Call Samaritans</a><button class="btn ghost" data-copy="116 123">Copy number</button></div>
+          </div>
+          <div class="line">
+            <div class="line-top"><span class="line-name">Shout</span><span class="line-hours">Free text, 24 hours</span></div>
+            <div class="line-what">If talking feels like too much. Text the word SHOUT.</div>
+            <div class="line-num">Text SHOUT to 85258</div>
+            <div class="actions"><a class="btn" href="sms:85258?&amp;body=SHOUT">Open text</a><button class="btn ghost" data-copy="85258">Copy number</button></div>
+          </div>
+          <div class="line">
+            <div class="line-top"><span class="line-name">CALM</span><span class="line-hours">5pm to midnight, every day</span></div>
+            <div class="line-what">Campaign Against Living Miserably. Free, and set up with men in mind.</div>
+            <div class="line-num">0800 58 58 58</div>
+            <div class="actions"><a class="btn" href="tel:0800585858">Call CALM</a><button class="btn ghost" data-copy="0800 58 58 58">Copy number</button></div>
+          </div>
+          <div class="line">
+            <div class="line-top"><span class="line-name">Childline</span><span class="line-hours">Under 19s</span></div>
+            <div class="line-what">Free, and won't show on a phone bill.</div>
+            <div class="line-num">0800 1111</div>
+            <div class="actions"><a class="btn" href="tel:08001111">Call Childline</a><button class="btn ghost" data-copy="0800 1111">Copy number</button></div>
+          </div>
+        </div>
+        <p class="muted" style="font-size:14px">Call buttons may not work on every device. The number is always shown so you can dial it yourself.</p>
+      </section>
+
+      <section>
+        <p class="eyebrow">Things to try</p>
+        <h2>Steadying tools</h2>
+        <p>All optional. If one doesn't feel right, skip it and try another, or none.</p>
+
+        <details class="tool"><summary>Look around</summary><div class="body">
+          <p>Turn your head slowly and let your eyes move. Name the colours you can see. Then shapes. Then anything that's moving.</p>
+          <p class="skip">Skip it if looking around feels like too much. Pick one spot instead.</p>
+        </div></details>
+
+        <details class="tool"><summary>5, 4, 3, 2, 1</summary><div class="body">
+          <p>Eyes open. Find 5 things you can see, 4 you can hear, 3 you can touch, 2 you can smell, and 1 thing you like about where you are.</p>
+          <p class="skip">If you lose count, that's fine. Start again, or just do the first one.</p>
+        </div></details>
+
+        <details class="tool"><summary>Get solid</summary><div class="body">
+          <p>Press your feet into the ground. Or put your hands on something steady: a tree, a wall, a bench, your own knees. Notice it holding your weight.</p>
+          <p class="skip">If noticing your body doesn't feel good today, stay with what you can see instead.</p>
+        </div></details>
+
+        <details class="tool"><summary>Slow steps</summary><div class="body">
+          <p>Walk a little slower and count your steps up to ten. Then start again at one. Keep your eyes on the path ahead.</p>
+          <p class="skip">Only where the ground is safe and you can see where you're going.</p>
+        </div></details>
+
+        <details class="tool"><summary>A longer breath out</summary><div class="body">
+          <p>Let your breath out be a little longer than your breath in. No need to breathe deeply. Just a slightly slower out-breath, a few times.</p>
+          <p class="skip">If paying attention to your breathing makes things worse, leave this one.</p>
+        </div></details>
+
+        <details class="tool"><summary>Use your voice</summary><div class="body">
+          <p>Hum quietly. Or say out loud where you are, what day it is, and what you can see. Plain and simple. "I'm in the park. It's Saturday. There's a bench and a bin."</p>
+          <p class="skip">Fine to do it under your breath if people are around.</p>
+        </div></details>
+
+        <details class="tool"><summary>Reach out</summary><div class="body">
+          <p>Send a short message to someone you trust. You don't have to explain.</p>
+          <div class="template" id="msg">Hey, having a rough moment. Can you give me a call when you get this?</div>
+          <div class="actions"><button class="btn ghost" data-copy-from="msg">Copy message</button></div>
+        </div></details>
+      </section>
+
+      <section>
+        <p class="eyebrow">Walking with friends</p>
+        <h2>If a friend is struggling</h2>
+        <ul class="plain">
+          <li>Stay with them. Calm voice, no rush.</li>
+          <li>Offer simple choices: stop, sit down, walk back, call someone.</li>
+          <li>Help them look around and name what's here.</li>
+          <li>Don't fix, advise, or ask about what came up. Being there is enough.</li>
+          <li>If they're at risk, call 999 and stay with them.</li>
+          <li>Check in with them the next day.</li>
+        </ul>
+      </section>
+
+      <section>
+        <p class="eyebrow">After the walk</p>
+        <h2>If something stays with you</h2>
+        <p>Sometimes a walk brings things up for a few days. That's normal. Talking it through with your GP, a therapist, or someone you trust is a good next step. It isn't a sign anything went wrong.</p>
+      </section>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="logos foot">
+      <img class="logo" src="data:image/webp;base64,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" alt="Rewilding Therapies logo" width="88" height="88">
+      <span class="logo op" role="img" aria-label="The Outdoor Practice logo"><svg viewBox="425 305 750 750" aria-hidden="true"><circle cx="800" cy="680" r="355" fill="none" stroke="#4f6b45" stroke-width="14"/><g fill="none" stroke="#1b2e1c" stroke-width="14" stroke-linecap="butt"><line x1="800" y1="380" x2="800" y2="980"/><polyline points="660,660 800,520 940,660"/><polyline points="690,750 800,640 910,750"/></g></svg></span>
+    </div>
+    <p class="sign">Take what you need.</p>
+    <p>The Outdoor Practice &middot; Rewilding Therapies &middot; <a href="https://rewildingtherapies.com">rewildingtherapies.com</a></p>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script>
+(function () {
+  var views = ["walk", "support", "about"];
+  function show(name, scroll) {
+    if (views.indexOf(name) < 0) name = "walk";
+    views.forEach(function (v) {
+      document.getElementById("view-" + v).hidden = v !== name;
+      document.getElementById("tab-" + v).setAttribute("aria-selected", v === name ? "true" : "false");
+    });
+    if (scroll) window.scrollTo(0, document.querySelector(".band").offsetHeight);
+  }
+  document.addEventListener("click", function (e) {
+    var t = e.target.closest("[data-view]");
+    if (t) {
+      var v = t.getAttribute("data-view");
+      if (location.hash !== "#" + v) location.hash = v; else show(v, true);
+      show(v, true);
+      return;
+    }
+    var c = e.target.closest("[data-copy],[data-copy-from]");
+    if (c) {
+      var text = c.getAttribute("data-copy") || document.getElementById(c.getAttribute("data-copy-from")).textContent.trim();
+      copy(text, c.getAttribute("data-copy-from"));
+    }
+  });
+  window.addEventListener("hashchange", function () { show(location.hash.slice(1), false); });
+  show(location.hash.slice(1) || "walk", false);
+
+  var toast = document.getElementById("toast"), tt;
+  function say(msg) { toast.textContent = msg; toast.hidden = false; clearTimeout(tt); tt = setTimeout(function () { toast.hidden = true; }, 2200); }
+  function copy(text, fromId) {
+    try {
+      navigator.clipboard.writeText(text).then(function () { say("Copied"); }, function () { fallback(fromId); });
+    } catch (err) { fallback(fromId); }
+  }
+  function fallback(fromId) {
+    if (fromId) { var r = document.createRange(); r.selectNodeContents(document.getElementById(fromId)); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); }
+    say("Couldn't copy. Select the text and copy it yourself.");
+  }
+
+  var al = document.getElementById("about-logo"), hl = document.querySelector(".band .logo");
+  if (al && hl) al.src = hl.src;
+
+  // Remember the checklist on this device only
+  document.querySelectorAll(".check input").forEach(function (box) {
+    try { box.checked = localStorage.getItem("hts-" + box.id) === "1"; } catch (e) {}
+    box.addEventListener("change", function () { try { localStorage.setItem("hts-" + box.id, box.checked ? "1" : "0"); } catch (e) {} });
+  });
+
+  // Writing spaces: saved on this device only
+  var groups = [
+    { title: "Intention", items: [["i-today", "Today I'd like"]] },
+    { title: "Reflections", items: [["r-arrive", "Arriving"], ["r-notice", "Noticing"], ["r-stop", "Stopping"], ["r-parts", "Parts of me"]] },
+    { title: "From the walk", items: [["m1-what", "What I notice about it"], ["m1-connect", "How it connects with life now"]] },
+    { title: "How I see myself, how I'd like to be seen", items: [["x-seen-item", "How I see myself"], ["x-seen", "What it says about how I see myself"], ["x-like-item", "How I'd like to be seen"], ["x-like", "What it is about this thing"], ["x-side", "Side by side"]] },
+    { title: "Then, now, next", items: [["m2-been", "Where I've been"], ["m2-now", "Where I am"], ["m2-next", "Where I'm heading"], ["m2-note", "What I chose, and why"]] },
+    { title: "Just describe it", items: [["m3-describe", "Description"]] },
+    { title: "Strengths and values", items: [["v-good", "Something I'm good at"], ["v-easier", "When things felt a little easier"], ["v-helps", "What helps on a tough day"], ["v-matters", "What matters to me"]] },
+    { title: "One small thing", items: [["g-thing", "My one small thing"], ["g-when", "When"], ["g-help", "What, or who, could help"]] }
+  ];
+  var ids = [];
+  groups.forEach(function (g) { g.items.forEach(function (it) { ids.push(it[0]); }); });
+  var saveTimer;
+  ids.forEach(function (id) {
+    var el = document.getElementById(id);
+    try { var v = localStorage.getItem("hts-" + id); if (v) el.value = v; } catch (e) {}
+    el.addEventListener("input", function () {
+      clearTimeout(saveTimer);
+      saveTimer = setTimeout(function () { try { localStorage.setItem("hts-" + id, el.value); } catch (e) {} }, 300);
+      count();
+    });
+  });
+  function filled() { return ids.filter(function (id) { return document.getElementById(id).value.trim(); }).length; }
+  function count() {
+    var n = filled();
+    document.getElementById("export-count").textContent = n === 0 ? "Nothing written yet." : n === 1 ? "1 answer written." : n + " answers written.";
+  }
+  count();
+
+  function today() { return new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" }); }
+  function asText() {
+    var out = ["Holding the Space", "A walk on " + today(), ""];
+    groups.forEach(function (g) {
+      var rows = g.items.filter(function (it) { return document.getElementById(it[0]).value.trim(); });
+      if (!rows.length) return;
+      out.push(g.title.toUpperCase());
+      rows.forEach(function (it) { out.push(it[1] + ":"); out.push(document.getElementById(it[0]).value.trim()); out.push(""); });
+    });
+    out.push("Take what you need.");
+    out.push("rewildingtherapies.com");
+    return out.join("\n");
+  }
+  function asPdf() {
+    var J = window.jspdf && window.jspdf.jsPDF;
+    if (!J) return null;
+    var doc = new J({ unit: "mm", format: "a4" });
+    var W = 210, M = 20, y = 24, width = W - M * 2;
+    function need(h) { if (y + h > 277) { doc.addPage(); y = 22; } }
+    doc.setFont("times", "normal"); doc.setFontSize(26); doc.setTextColor(26, 58, 42);
+    doc.text("Holding the Space", M, y); y += 8;
+    doc.setFont("helvetica", "normal"); doc.setFontSize(11); doc.setTextColor(90, 106, 94);
+    doc.text("A walk on " + today(), M, y); y += 12;
+    groups.forEach(function (g) {
+      var rows = g.items.filter(function (it) { return document.getElementById(it[0]).value.trim(); });
+      if (!rows.length) return;
+      need(14);
+      doc.setFont("times", "bold"); doc.setFontSize(16); doc.setTextColor(26, 58, 42);
+      doc.text(g.title, M, y); y += 7;
+      rows.forEach(function (it) {
+        need(10);
+        doc.setFont("helvetica", "bold"); doc.setFontSize(10); doc.setTextColor(90, 106, 94);
+        doc.text(it[1], M, y); y += 5;
+        doc.setFont("helvetica", "normal"); doc.setFontSize(11.5); doc.setTextColor(31, 44, 36);
+        doc.splitTextToSize(document.getElementById(it[0]).value.trim(), width).forEach(function (line) {
+          need(6); doc.text(line, M, y); y += 5.6;
+        });
+        y += 4;
+      });
+      y += 3;
+    });
+    need(16);
+    doc.setFont("times", "italic"); doc.setFontSize(15); doc.setTextColor(26, 58, 42);
+    doc.text("Take what you need.", M, y + 4);
+    doc.setFont("helvetica", "normal"); doc.setFontSize(10); doc.setTextColor(90, 106, 94);
+    doc.text("The Outdoor Practice  |  Rewilding Therapies  |  rewildingtherapies.com", M, y + 11);
+    return doc.output("blob");
+  }
+
+  var note = document.getElementById("export-note");
+  function tell(msg) { note.textContent = msg; note.hidden = false; }
+  var dl = null, dlReady = false;
+  if (window.claude && window.claude.use) {
+    window.claude.use("downloads").then(function (d) { dl = d; dlReady = true; }, function () { dlReady = true; });
+  } else { dlReady = true; }
+
+  function offer(filename, data) {
+    if (!filled()) { tell("Write something first, then download it."); return; }
+    if (dl) {
+      dl.save({ filename: filename, data: data }).then(function () { say("Saved"); }, function (err) {
+        var c = err && err.code;
+        if (c === "declined") return;
+        if (c === "rate_limited") tell("A save is already open. Finish that one first.");
+        else tell("Download isn't available here. Use Copy all and paste it into your notes.");
+      });
+      return;
+    }
+    if (window.claude && !dlReady) { tell("Getting ready. Try again in a moment."); return; }
+    try {
+      var blob = data instanceof Blob ? data : new Blob([data], { type: "text/plain" });
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(blob); a.download = filename;
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function () { URL.revokeObjectURL(a.href); }, 4000);
+    } catch (e) { tell("Download isn't available here. Use Copy all and paste it into your notes."); }
+  }
+  var stamp = function () { return new Date().toISOString().slice(0, 10); };
+  document.getElementById("dl-txt").addEventListener("click", function () { offer("holding-the-space-" + stamp() + ".txt", asText()); });
+  document.getElementById("dl-pdf").addEventListener("click", function () {
+    if (!filled()) { tell("Write something first, then download it."); return; }
+    var pdf = asPdf();
+    if (!pdf) { tell("The PDF tool didn't load. Try the text file instead."); return; }
+    offer("holding-the-space-" + stamp() + ".pdf", pdf);
+  });
+  document.getElementById("copy-all").addEventListener("click", function () {
+    if (!filled()) { tell("Write something first, then copy it."); return; }
+    var t = asText();
+    try { navigator.clipboard.writeText(t).then(function () { say("Copied"); }, function () { tell("Couldn't copy here. Try a download instead."); }); }
+    catch (e) { tell("Couldn't copy here. Try a download instead."); }
+  });
+
+  var conf = document.getElementById("clear-confirm");
+  document.getElementById("clear-start").addEventListener("click", function () { conf.hidden = false; });
+  document.getElementById("clear-no").addEventListener("click", function () { conf.hidden = true; });
+  document.getElementById("clear-yes").addEventListener("click", function () {
+    ids.forEach(function (id) { document.getElementById(id).value = ""; try { localStorage.removeItem("hts-" + id); } catch (e) {} });
+    conf.hidden = true; count(); say("Cleared");
+  });
+})();
+</script>
+
+</body>
+</html>
