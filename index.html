@@ -156,6 +156,19 @@ details.tool .body { padding: 0 18px 18px; display: grid; gap: 10px; }
 .feature h3 { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; }
 .feature p { font-size: 15px; color: var(--muted); }
 
+/* Stay connected */
+.connect { display: grid; gap: 12px; }
+.connect-card { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 6px 14px; align-items: start; padding: 18px; border-radius: 22px 22px 22px 6px; background: var(--surface); border: 1px solid var(--line); text-decoration: none; color: var(--ink); }
+.connect-card:hover { border-color: var(--sage); }
+.connect-card svg { width: 36px; height: 36px; color: var(--sage); grid-row: span 2; }
+.connect-text { display: grid; gap: 2px; }
+.connect-text span { font-size: 15px; color: var(--muted); }
+.connect-go { grid-column: 2; font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--ember); }
+.socials { display: flex; flex-wrap: wrap; gap: 10px 18px; margin-top: 8px; }
+.socials a { display: inline-flex; align-items: center; gap: 8px; color: var(--on-forest); text-decoration: none; font-size: 14px; font-weight: 500; }
+.socials svg { width: 22px; height: 22px; }
+.socials a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
 /* Writing spaces */
 .field { display: grid; gap: 6px; }
 .field label { font-weight: 600; }
@@ -581,6 +594,23 @@ footer .wrap { padding-block: 24px 40px; display: grid; gap: 6px; font-size: 14p
         </div>
       </section>
 
+      <section>
+        <p class="eyebrow">Stay connected</p>
+        <h2>Keep walking with the tribe</h2>
+        <div class="connect">
+          <a class="connect-card" href="https://www.skool.com/outdoor-psychotherapy-3052/about" target="_blank" rel="noopener">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4 4 12h3l-4 6h12l-4-6h3z M9 18v4 M23 8l-5 8h3l-4 6h12l-4-6h3z M23 22v5"/></svg>
+            <span class="connect-text"><strong>The Outdoor Practice</strong><span>Our community on Skool. More exercises, conversations and support for working with nature.</span></span>
+            <span class="connect-go">Join on Skool</span>
+          </a>
+          <a class="connect-card" href="https://www.instagram.com/luke_slater_rewildingtherapies/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="5" width="22" height="22" rx="6"/><circle cx="16" cy="16" r="5"/><circle cx="22.5" cy="9.5" r="1" fill="currentColor"/></svg>
+            <span class="connect-text"><strong>Instagram</strong><span>@luke_slater_rewildingtherapies. Walks, metaphors and notes from the woods.</span></span>
+            <span class="connect-go">Follow</span>
+          </a>
+        </div>
+      </section>
+
     </div>
   </div>
 
@@ -748,6 +778,10 @@ footer .wrap { padding-block: 24px 40px; display: grid; gap: 6px; font-size: 14p
     </div>
     <p class="sign">Take what you need.</p>
     <p>The Outdoor Practice &middot; Rewilding Therapies &middot; <a href="https://rewildingtherapies.com">rewildingtherapies.com</a></p>
+    <div class="socials">
+      <a href="https://www.instagram.com/luke_slater_rewildingtherapies/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="5" width="22" height="22" rx="6"/><circle cx="16" cy="16" r="5"/><circle cx="22.5" cy="9.5" r="1" fill="currentColor"/></svg>Instagram</a>
+      <a href="https://www.skool.com/outdoor-psychotherapy-3052/about" target="_blank" rel="noopener" aria-label="The Outdoor Practice on Skool"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3 9 14h4l-6 9h18l-6-9h4z M16 23v6"/></svg>Skool community</a>
+    </div>
   </div>
 </footer>
 
